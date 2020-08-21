@@ -1,0 +1,1333 @@
+@import 'compatibility.less';
+@import 'color.less';
+
+html,
+body {
+  height: 100%;
+  background-color: @background;
+  color: @text;
+  font-family: 'Source Han Sans CN', Arial;
+  // font-family: Arial, roboto, sans-serif;
+  overflow: hidden; // 解决iframe跳转两个滚动条的问题
+}
+pre {
+  font-family: 'Source Han Sans CN', Arial;
+  white-space: pre-wrap;
+}
+body,
+h4 {
+  font-size: 16px;
+}
+// html,body{ overflow-y:scroll;}
+// html,body{ overflow:scroll; min-height:101%;}
+// html{ overflow:-moz-scrollbars-vertical;}
+.m10 {
+  margin: 10px;
+}
+
+.ml10 {
+  margin-left: 10px;
+}
+
+.m8 {
+  margin: 8px;
+}
+
+.m20 {
+  margin: 20px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mt8 {
+  margin-top: 8px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+.mb12 {
+  margin-bottom: 12px;
+}
+
+.mb8 {
+  margin-bottom: 8px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.p10 {
+  padding: 10px;
+}
+
+.p20 {
+  padding: 20px;
+}
+.pt8 {
+  padding-top: 8px;
+}
+.pt10 {
+  padding-top: 10px;
+}
+
+.pt20 {
+  padding-top: 20px;
+}
+
+.pt40 {
+  padding-top: 40px;
+}
+
+.pb20 {
+  padding-bottom: 20px;
+}
+
+.ptb20 {
+  padding: 20px 0;
+}
+
+.plr20 {
+  padding: 0 20px;
+}
+
+.pb100 {
+  padding-bottom: 100px;
+}
+
+.mt40 {
+  margin-top: 40px;
+}
+
+.textC {
+  text-align: center;
+}
+
+.fwBold {
+  font-weight: bold;
+}
+
+.fs14 {
+  font-size: 14px;
+}
+
+.fs16 {
+  font-size: 16px;
+}
+
+.fs18 {
+  font-size: 18px;
+}
+
+.fs22 {
+  font-size: 22px;
+}
+
+.fs24 {
+  font-size: 24px;
+}
+
+.fs28 {
+  font-size: 28px;
+}
+
+.fs30 {
+  font-size: 30px;
+}
+
+.fs34 {
+  font-size: 34px;
+}
+
+.fs36 {
+  font-size: 36px;
+}
+
+.fs38 {
+  font-size: 38px;
+}
+
+.fs40 {
+  font-size: 40px;
+}
+
+.fs44 {
+  font-size: 44px;
+}
+
+.fs48 {
+  font-size: 48px;
+}
+
+.fs50 {
+  font-size: 50px;
+}
+
+.fs54 {
+  font-size: 54px;
+}
+
+.fs56 {
+  font-size: 56px;
+}
+
+.fs66 {
+  font-size: 66px;
+}
+
+.fs86 {
+  font-size: 86px;
+}
+
+.bgf {
+  background: #fff;
+}
+
+.bge {
+  background: #efefef;
+}
+
+//让图片contain显示
+.imgContain {
+  height: 100.5%; //屏幕分辨率底部有不到1px的留白问题
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+// 通用标题
+.comTitle {
+  line-height: 45px;
+}
+
+//富文本字体大小
+div.ql-editor {
+  font-size: 16px;
+  padding: 0;
+  line-height: 1.8;
+}
+
+.quill-editor .ql-editor {
+  padding: 12px 15px;
+}
+
+.el-table {
+  .ql-editor {
+    font-size: 14px;
+  }
+}
+
+// 查询表单通用
+.queryForm {
+  padding: 22px 10px 0 10px;
+  background-color: #fff;
+  // overflow: auto;
+  // margin-bottom: 8px;
+  .el-form .el-form-item {
+    height: 40px; //ie可能会41.9px，导致自己写的40px 浮动的时候，布局有问题
+  }
+  .el-form:not(.el-form--inline) {
+    .el-form-item {
+      float: left;
+      min-width: 335px;
+      // .el-form-item__content {
+      //   margin-left: 110px !important;
+      // }
+      // .el-form-item__label {
+      //   width: 110px !important;
+      // }
+    }
+    .el-form-item:last-child {
+      min-width: 0;
+    }
+  }
+  .el-range-editor.el-input__inner {
+    padding-right: 0;
+    // padding-left: 4px;
+  }
+  .el-range-editor {
+    .el-range-input {
+      width: 80px;
+    }
+    .el-range__close-icon {
+      width: 15px;
+    }
+  }
+}
+
+// 增删改查通用
+.CRUD {
+  // margin-bottom: 8px;
+  background-color: #fff;
+  padding: 0 10px;
+  overflow: auto;
+  width: 100%;
+  // 里面没有按钮的时候
+  .el-button:first-child {
+    margin-top: 0.5rem;
+  }
+  .el-button {
+    margin-bottom: 0.5rem;
+  }
+}
+
+// 表格和分页通用
+.result {
+  padding: 10px;
+  background-color: #fff;
+  position: relative;
+  overflow: auto;
+  // 标题
+  .caption {
+    line-height: 40px;
+    font-style: 16px;
+    text-align: center;
+    border: 1px solid @tableBorder;
+    border-bottom: none;
+  }
+  .el-table {
+    margin-bottom: 10px;
+    & th,
+    & td {
+      // 解决预览之后会改变字体(偶现)
+      font-family: 'Source Han Sans CN', Arial;
+      text-align: center;
+    }
+    img {
+      height: 40px;
+      object-fit: contain;
+    }
+    .ql-editor {
+      line-height: 23px;
+      overflow-y: visible;
+      img {
+        max-height: 46px;
+        height: auto;
+      }
+    }
+    // 解决签约-预览后覆盖表格字样式
+    &.signTable {
+      td {
+        .cell {
+          color: @text !important;
+          font-size: 14px !important;
+          font-weight: normal !important;
+        }
+      }
+    }
+  }
+  .el-pagination {
+    float: right;
+    max-width: 100%;
+    overflow: auto;
+  }
+  .el-pagination__total {
+    margin-right: 5px;
+  }
+  .currentTotal {
+    font-size: 13px;
+    float: right;
+    color: @text4;
+    margin-top: 7px;
+    padding: 0 5px;
+  }
+}
+
+//单元表格内容多,控制最大高度,隐藏滚动条
+//使用：表格加类名overflowTable;表格的column,包裹盒子加个类moreCell
+.overflowTable {
+  td {
+    overflow: hidden;
+  }
+  th:first-child .cell,
+  td:first-child .cell {
+    padding-left: 0;
+  }
+  .cell {
+    padding: 0;
+    //为了让内容滚动条消失
+    .moreCell {
+      max-height: 46px;
+      position: relative;
+      left: 17px;
+      top: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 20px;
+    }
+  }
+}
+// 消息设置/合同管理
+.tablePopover {
+  max-width: 25%;
+  min-width: 260px;
+  padding: 0;
+  & > *:nth-child(1) {
+    padding: 12px;
+    max-height: 48vh;
+    overflow: auto;
+  }
+  .popoverContent {
+    li {
+      float: left;
+      min-width: 130px;
+      padding-right: 4px;
+      // max-width: 260px;
+      // height: 23px;
+      line-height: 1.8;
+      overflow: auto;
+    }
+  }
+}
+// 合同管理
+.tablePopover1 {
+  li {
+    // min-width: 225px;
+    padding: 0 5px;
+    color: @text1;
+    line-height: 1.8;
+  }
+}
+.result {
+  .eye {
+    margin-left: 5px;
+    color: @text1;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+// 对话框解限最大宽
+.dlgWidthAuto {
+  .el-dialog {
+    max-width: none;
+  }
+}
+
+// 预览加大弹框宽度
+.preview {
+  .el-dialog {
+    width: 80%;
+  }
+}
+
+// 多选按钮组
+.max10char {
+  .el-checkbox__label {
+    width: 160px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+  .el-dialog {
+    max-width: 700px;
+  }
+}
+
+// 删除对话框的消息提示
+.deleteInfo,
+.dialogInfo {
+  padding-left: 10px;
+  font-size: 14px;
+  i {
+    font-size: 22px;
+    margin-right: 10px;
+    color: #ff5722;
+    vertical-align: middle;
+  }
+}
+
+// 导入对话框
+.importDialog {
+  .el-dialog__body {
+    overflow: auto;
+  }
+
+  .importBox {
+    min-width: 330px;
+    line-height: 34px;
+
+    & > span:nth-child(1) {
+      margin-right: 15px;
+    }
+  }
+
+  // 导入对话框的消息提示
+  .importFileInfo {
+    border: solid 1px #ccc;
+    width: 165px;
+    height: 34px;
+    margin: 0 10px 0 0;
+    border-radius: 5px;
+  }
+}
+
+// 角色权限/用户/门店详情
+.details {
+  // padding: 0 5px;
+  font-size: 16px;
+  .queryForm {
+    padding-left: 10px;
+  }
+
+  .result {
+    padding-bottom: 0;
+    max-width: 1300px;
+
+    .el-table th {
+      background-color: #d3d3d3;
+      // color: @text;
+      font-weight: 600;
+    }
+
+    .el-table td {
+      padding: 6px 0;
+    }
+  }
+
+  //基本信息
+  .basic {
+    th {
+      padding: 9px 0;
+    }
+
+    .el-table__body-wrapper {
+      display: none;
+    }
+
+    thead.is-group {
+      th {
+        background-color: @background;
+      }
+    }
+
+    //让详情中的图片适应
+    .el-table img {
+      height: auto;
+    }
+
+    //修改ie上的
+    .el-image__inner--center {
+      // transform: translateY(0);
+      transform: translateX(-50%);
+      // transform: translate(0 0);
+    }
+
+    .el-table th div {
+      padding: 0;
+    }
+
+    .el-table .cell {
+      padding: 0 10px;
+    }
+  }
+}
+
+// 角色树的表单form-item高度自适应
+.create {
+  height: auto;
+}
+
+// 角色树对齐
+.roleTree {
+  // position: relative;
+  padding-top: 6px;
+
+  .el-tree-node__content > .el-tree-node__expand-icon {
+    padding: 6px 3px 6px 0;
+    position: relative;
+    left: -3px;
+  }
+}
+
+// 用户/门店 等对话框上传图片
+.avatar-uploader {
+  text-align: center;
+
+  // 针对注册页的上传图片
+  &.regisUploader {
+    .el-upload {
+      width: auto;
+    }
+  }
+
+  .el-upload {
+    border: 1px dashed @border;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 135px;
+  }
+
+  .el-upload:hover {
+    border-color: #409eff;
+  }
+
+  .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 135px;
+    height: 110px;
+    line-height: 110px;
+    text-align: center;
+  }
+
+  .avatar {
+    width: 135px;
+    height: 110px;
+    display: block;
+  }
+
+  .tip {
+    line-height: 25px;
+  }
+}
+
+// 用户/门店 对话框中再打开的对话框
+.innerDialog {
+  .el-dialog {
+    max-width: 560px;
+    .el-cascader-menu {
+      min-width: 130px;
+    }
+  }
+  .el-dialog__body {
+    padding: 20px 30px 0;
+    margin-bottom: 20px;
+  }
+  .result {
+    // margin:0 auto;
+    // min-height: 250px;
+    padding: 0;
+
+    .el-table th {
+      color: @text;
+      height: 0;
+      text-align: left;
+    }
+
+    .el-table td {
+      text-align: left;
+    }
+
+    .el-table__body-wrapper {
+      min-height: 180px;
+      border-right: 1px solid @border1;
+      border-left: 1px solid @border1;
+    }
+
+    .el-table td {
+      border: none;
+    }
+  }
+}
+
+// 工单 新增/回复 表单中form-item 预览图片
+.uploadImg {
+  height: auto;
+  margin-bottom: 17px;
+
+  .el-form-item__content {
+    line-height: normal;
+    font-size: 0;
+  }
+
+  .el-upload--picture-card,
+  .el-upload-list--picture-card .el-upload-list__item {
+    width: 60px;
+    height: 60px;
+    line-height: 72px;
+    margin-bottom: 8px;
+  }
+
+  .el-upload--picture-card i {
+    font-size: 20px;
+  }
+
+  .tips {
+    font-size: 14px;
+    color: @text2;
+    margin-left: 10px;
+    position: relative;
+    top: -4px;
+  }
+}
+
+// 工单状态
+.work {
+  .comTitle {
+    font-size: 16px;
+
+    &:before {
+      content: '';
+      background-color: @main;
+      border-left: 3px solid @main;
+      margin-right: 10px;
+    }
+  }
+
+  padding: 0 10px;
+
+  .state {
+    line-height: 40px;
+
+    span {
+      margin: 0 40px;
+    }
+  }
+}
+
+//工单 回复/详情页面
+.replyOrDetails {
+  padding: 0 20px;
+  max-width: 1200px;
+
+  .comTitle {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .el-image {
+    border-radius: 5px;
+  }
+
+  // 面包屑导航
+  .breadcrumb {
+    strong {
+      cursor: pointer;
+    }
+
+    strong:hover {
+      color: @main;
+    }
+
+    border-bottom: 1px solid @border;
+  }
+
+  // 基本信息
+  .info {
+    border-bottom: 1px solid @border;
+
+    ul {
+      margin-left: 50px;
+      padding-bottom: 10px;
+
+      li {
+        line-height: 40px;
+      }
+
+      li.problemDesc {
+        padding: 6px 0;
+        line-height: 26px;
+        max-width: 880px;
+        word-wrap: break-word;
+      }
+
+      li.flex {
+        & > div {
+          padding: 9px 0;
+          line-height: 0;
+        }
+      }
+    }
+  }
+
+  // 沟通记录
+  .commRecord {
+    ul {
+      li {
+        padding: 10px 20px;
+        border-bottom: 1px solid @border;
+
+        .record {
+          & > p {
+            margin-bottom: 5px;
+          }
+
+          .content {
+            max-width: 680px;
+            line-height: 22px;
+            word-wrap: break-word;
+
+            .el-rate {
+              display: inline-block;
+            }
+          }
+        }
+
+        & > i {
+          font-size: 50px;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
+  // 表单回复
+  .el-form {
+    margin-top: 18px;
+
+    .el-form-item {
+      height: auto;
+    }
+
+    .radio {
+      // .el-radio-group {
+      .el-radio {
+        display: block;
+        height: 40px;
+        line-height: 40px;
+      }
+
+      // }
+      .score {
+        min-width: 170px;
+
+        .el-rate {
+          line-height: 2.5;
+        }
+      }
+    }
+
+    .textarea {
+      .el-textarea {
+        max-width: 570px;
+      }
+
+      textarea {
+        min-height: 54px;
+      }
+    }
+
+    .uploadImg {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// 针对组织架构ie10下弹框宽度问题
+.orgn {
+  .el-input {
+    width: 77%\9;
+  }
+}
+
+.upload-demo,
+.importUpload {
+  // margin: auto;
+  .el-upload--text {
+    float: right;
+  }
+
+  .el-upload-list--text {
+    float: left;
+    border: solid 1px #ccc;
+    width: 165px;
+    height: 34px;
+    margin: 0 10px 0 0;
+    border-radius: 5px;
+  }
+
+  .el-upload-list__item:first-child {
+    margin-top: 0px;
+
+    a,
+    label,
+    i {
+      height: 32px;
+      line-height: 32px;
+    }
+
+    i.el-icon-close {
+      line-height: 24px;
+    }
+  }
+}
+
+// 退出
+.logOut {
+  .el-dialog__body {
+    line-height: normal;
+  }
+}
+
+.tipBoxs {
+  background-color: #464a56;
+  border-color: #464a56;
+
+  i.el-message__icon.el-icon-warning {
+    color: #fe5457;
+  }
+
+  p.el-message__content {
+    color: #fff;
+  }
+}
+
+// 语言切换
+.box {
+  .el-dropdown {
+    padding-right: 20px;
+  }
+}
+
+.el-dropdown-menu__item.is-disabled {
+  cursor: not-allowed;
+}
+
+.check {
+  .el-checkbox__input.is-checked .el-checkbox__inner {
+    background-color: #0b75e3 !important;
+    border-color: #0b75e3 !important;
+  }
+}
+
+.avatar-uploader {
+  .el-upload {
+    display: block !important;
+    margin: auto !important;
+  }
+}
+
+.pasWBox {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  i {
+    font-size: 16px;
+  }
+}
+
+// login tab
+.swiperLogin {
+  height: 547px;
+
+  .el-carousel__container,
+  .el-carousel__item {
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.el-carousel__mask {
+  background-color: rgba(0, 0, 0, 0);
+}
+.login {
+  .el-tabs__nav.is-top {
+    width: 100%;
+  }
+
+  #tab-userLogin,
+  #tab-enterpriceLogin {
+    width: 50%;
+    text-align: center;
+  }
+
+  .el-tabs__content {
+    padding: 0 20px;
+  }
+
+  .el-input {
+    width: 96%;
+  }
+
+  ul {
+    li {
+      input {
+        width: 96%;
+      }
+    }
+  }
+}
+
+// header popover
+.el-popover {
+  min-width: 70px;
+
+  ul.headPop {
+    width: 870px;
+    margin: auto;
+
+    li {
+      width: 120px;
+      box-sizing: border-box;
+      flex: 0 0 16%;
+      padding: 10px;
+
+      img {
+        width: 120px;
+        height: 120px;
+      }
+
+      p {
+        text-align: center;
+      }
+
+      i {
+        font-size: 26px;
+      }
+
+      span {
+        font-size: 16px;
+        line-height: 40px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// index menu
+.menu {
+  .el-submenu__title,
+  .el-menu-item {
+    // min-width: 200px;
+    color: #fff;
+    overflow: hidden;
+
+    i {
+      margin-right: 0px;
+    }
+
+    span {
+      color: #fff;
+    }
+  }
+
+  .el-menu-item-group__title {
+    padding: 0px 0 0px 20px;
+  }
+
+  .el-menu-item-group {
+    background: #222;
+  }
+}
+
+// topMenuBar
+.el-popover {
+  .el-divider--horizontal {
+    margin: 10px 0;
+  }
+}
+
+// payInfo
+.payBox {
+  .el-radio__input {
+    float: left;
+  }
+}
+
+// toPay
+.pay {
+  .el-tabs__header {
+    padding: 0;
+  }
+}
+
+// organization
+.filter-tree,
+.box-tree {
+  .el-tree-node {
+    overflow: visible;
+  }
+}
+
+// 组织架构中自定义树样式
+.organBox {
+  display: inline-block;
+  width: calc(100% - 38px);
+  height: 30px;
+  img {
+    display: inline-block;
+    margin-top: 7px !important;
+    width: 14px;
+    height: 14px;
+  }
+  .organName {
+    font-size: 16px;
+    padding-left: 4px;
+    display: inline-block;
+    max-width: calc(100% - 25px);
+    line-height: 30px;
+  }
+  .redPoint {
+    width: 8px;
+    height: 9px;
+    background: #f00;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 6px 0 0 2px;
+  }
+}
+.card .el-card__body {
+  padding: 10px 0;
+}
+// 弹框
+.modeDia {
+  z-index: 10002 !important;
+  &.addResDia {
+    .el-dialog__body {
+      padding: 0 20px 30px;
+    }
+  }
+  // 不重置组织架构中弹框的button
+  .el-button--primary.is-disabled,
+  .el-button--primary.is-disabled:hover,
+  .el-button--primary.is-disabled:focus,
+  .el-button--primary.is-disabled:active {
+    border: 1px solid #dcdfe6;
+    background-color: #f4f4f4;
+    color: #c0c4cc;
+  }
+  &.special {
+    .el-dialog {
+      width: 90%;
+      max-width: 968px;
+    }
+  }
+  .el-dialog {
+    .transfer {
+      .el-transfer-panel {
+        width: 42%;
+      }
+      .el-transfer__buttons {
+        padding: 0 10px;
+      }
+    }
+  }
+  &.addResDia {
+    .el-dialog {
+      max-width: 80%;
+    }
+  }
+  .el-radio {
+    line-height: 40px;
+  }
+}
+
+.el-tree-node > .el-tree-node__children {
+  overflow: visible;
+}
+
+//还原为原来的值，可能在某个里面样式被覆盖，再还原
+.el-tree-node .el-tree-node__content > .el-checkbox {
+  margin-right: 8px;
+  overflow: visible;
+  white-space: normal;
+}
+
+.impTips {
+  .el-dialog__body {
+    padding: 0 20px;
+  }
+}
+
+.filterTreeInput {
+  input {
+    width: 98%;
+  }
+
+  .el-input__suffix {
+    right: 15px;
+  }
+}
+
+// bmRealNameAuth ie下
+.el-step.is-horizontal {
+  width: 33.3333%;
+}
+
+.personalAuth {
+  .is-horizontal.el-step {
+    width: 100%;
+  }
+}
+
+.regFormPerson {
+  .el-select {
+    margin-left: 0 !important;
+  }
+}
+
+.regForm {
+  .el-input {
+    width: 96%;
+  }
+
+  .el-cascader,
+  .el-select {
+    width: 96% !important;
+
+    .el-input {
+      width: 100%;
+    }
+  }
+}
+
+.regFormPerson {
+  .vailIpt {
+    width: 68%\9;
+  }
+
+  .el-input {
+    width: 96%;
+  }
+}
+
+// goodsDetail
+.el-slider__marks-text:last-child {
+  left: initial !important;
+  right: -20px;
+}
+
+// 折叠面板
+.map {
+  .el-collapse-item__header {
+    font-size: 16px;
+    height: auto;
+  }
+}
+
+// // 硬件详情中的dialog
+// .hardDetailDialogForm {
+//   .el-dialog__body {
+//     padding: 0.5rem 2rem 1.5rem;
+//   }
+//   .el-form-item {
+//     margin-bottom: 15px;
+//     width: 100%;
+//   }
+// }
+// 我的客户发券dialog
+.dialogVour {
+  .el-dialog {
+    width: 80% !important;
+    max-width: 100%;
+  }
+  .el-dialog__body {
+    padding: 0 20px;
+  }
+}
+// 资源市场
+.box-card {
+  .el-card__body {
+    padding: 12px 20px;
+  }
+}
+// 蓝色的a标签
+a.blue {
+  color: #0b75e3;
+  font-size: 14px;
+  cursor: pointer;
+}
+a.blue:hover {
+  color: @main;
+}
+
+/******  wangeditor  ******/
+#editor,
+.previewWangEd {
+  a {
+    color: @text7;
+  }
+  ul {
+    list-style-type: disc;
+    &.w-e-list,
+    &.w-e-panel-tab-title {
+      list-style: none;
+    }
+  }
+  ol {
+    list-style-type: decimal;
+  }
+  // 使用<section>浏览器会重写h1的字体大小
+  h1 {
+    font-size: 2em;
+  }
+  h4 {
+    font-size: 1em;
+  }
+}
+// 针对富文本
+#editor {
+  .w-e-toolbar {
+    flex-wrap: wrap;
+  }
+  .w-e-panel-tab-title {
+    display: none;
+  }
+}
+// 针对弹框
+.previewWangEd {
+  // 每个要展示协议盒子加class="previewWangEd"
+  // 固定行高为1.8
+  p,
+  ol,
+  ul,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
+    line-height: 1.8;
+  }
+  table {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+  }
+  table td,
+  table th {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 3px 5px;
+  }
+  table th {
+    border-bottom: 2px solid #ccc;
+    text-align: center;
+  }
+}
+
+// 多选按钮组
+.shop-tree {
+  .el-checkbox-group {
+    label {
+      width: 100%;
+      margin-right: 0;
+      padding-left: 3px;
+      &:hover {
+        cursor: pointer;
+        background: @background;
+      }
+    }
+  }
+  .el-checkbox__input.is-checked + .el-checkbox__label {
+    color: #535353;
+  }
+}
+
+// 去掉取消按钮默认hover样式,需加class'cancel'
+#changePsd, #changePhone, #verifyEmail{
+  .cancel.el-button:hover, .cancel.el-button:focus{
+    color: #535353;
+    border-color: #d3d3d3;
+    background-color: #fff;
+  }
+}

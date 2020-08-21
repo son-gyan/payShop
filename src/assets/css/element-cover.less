@@ -1,0 +1,489 @@
+@import 'color.less';
+
+// element-ui的样式重置
+// 所有的select,否则基本固定为217px,与input自适应会不一样长
+.el-select,
+.el-date-editor.el-input,
+.el-cascader,
+.el-date-editor--daterange.el-input,
+.el-date-editor--daterange.el-input__inner,
+.el-date-editor--timerange.el-input,
+.el-date-editor--timerange.el-input__inner {
+    width: 100%;
+}
+
+// 文本域
+.el-textarea {
+
+    // 文本域不可拖拽
+    .el-textarea__inner {
+        resize: none;
+    }
+
+    // 可能会继承，还原为原值
+    .el-input__count {
+        line-height: normal;
+        right: 3px;
+        bottom: 3px;
+    }
+}
+
+//  级联菜单显示问题
+// .el-cascader-node__label {
+//   flex-basis: auto; // 兼容edge
+// }
+.el-cascader__tags .el-tag>span {
+    display: block \0; //ie10溢出显示
+    max-width: 100% \0;
+    flex-basis: auto \0; //ie11+ 不显示
+}
+
+// 兼容ie
+.el-cascader-node__postfix {
+    margin-top: -7px; //edge 不支持margin-top: -7px \0;\9 \9\0 都不支持
+    top: 50%;
+}
+
+// 太长折行
+.el-message,
+.el-message__content {
+    word-wrap: break-word;
+    white-space: normal;
+    word-break: break-all;
+}
+
+// 表单
+.el-form {
+
+    // 按tab键样式有问题
+    .el-radio__input {
+        padding: 5px 0 5px 5px;
+    }
+}
+
+// 表单的标签太长,折行布局混乱,不让折行
+.el-form-item label {
+    // height: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    // text-overflow: ellipsis;
+}
+
+// 错误太长,会折行,布局错乱
+.el-form-item__error {
+    // overflow: hidden; // 超出隐藏掉
+    white-space: nowrap; // 不换行,太宽超出,页面单独控制是否隐藏
+    max-width: 100%; //宽度会太宽,也可页面单独控制设置宽度
+    height: 18px; //高度太小，英文显示不全
+    // text-overflow: ellipsis;
+}
+
+// IE8+ hack写法 \0	兼容IE 8\9\10
+// 解决ie 上table包括祖级用了v-if 控制显示 宽度不是100%的问题。
+// 或表格设置 height/max-height="565" css中写max-height不可以,height都可以 双控
+// .el-table__header {
+//   border-top: 1px solid #ebeef5 \0; // 只对ie有效,会有个边框
+//   border-top-color: #ebeef5;
+// }
+// .el-table--border {
+//   border-top: none \0; // 边框表格去掉重复设置
+// }
+
+// 项目的重置
+// 侧边栏菜单
+.el-submenu__title,
+.el-menu-item {
+    color: #fff;
+}
+
+.el-submenu__title:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.el-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.el-menu-item.is-active {
+    background-color: @navbgActive  !important;
+    color: @main1;
+
+    i,
+    span {
+        color: @main1;
+    }
+}
+
+// .el-submenu__title,
+// .el-menu-item {
+//   color: #fff;
+// }
+// .el-submenu__title:hover {
+//   background-color: rgba(255, 255, 255, 0.2) !important;
+// }
+// .el-menu-item:hover {
+//   background-color: rgba(255, 255, 255, 0.2) !important;
+// }
+// .el-menu-item.is-active {
+//   background-color: @main !important;
+//   color: red !important;
+//   i {
+//     color: red !important;
+//   }
+// }
+// 表格和树状图高亮重置
+.el-table__body tr.current-row>td,
+.el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content {
+    background-color: #ffe9cf !important;
+}
+
+// 回顶部样式重置
+.el-backtop {
+    background-color: #ffdbb1;
+}
+
+.el-backtop:hover {
+    background-color: #ffe9cf;
+}
+
+// tab栏
+.el-tabs__header {
+    padding: 10px;
+    margin-bottom: 0;
+    background-color: #fff;
+}
+
+// 级联菜单
+.el-cascader-menu {
+    min-width: 130px;
+}
+
+// 表格中去掉图片外框
+.el-table img[src=''],
+.el-table img:not([src]) {
+    opacity: 0; //visibility:hidden
+}
+
+//表格间距,原12px
+.el-table td {
+    padding: 10px 0;
+}
+
+// 对话框限制最大宽
+.el-dialog {
+    overflow: hidden;
+    width: 55%;
+    /* max-width: 640px; */
+
+    .el-form-item {
+        width: 85%;
+        min-width: 14.25rem;
+    }
+}
+
+// dialog统一风格
+.el-dialog__header {
+    background: #feae50;
+    // padding-bottom: 0.8rem;
+    // padding: 1rem;
+    line-height: 1rem;
+
+    span,
+    i.el-dialog__close {
+        color: #fff;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+// 为了里面是form的时候，底部留白不那么大，利用外边距塌陷
+.el-dialog__body {
+    padding-bottom: 0;
+    margin-bottom: 30px;
+}
+
+.el-dialog__footer {
+    border-top: solid 1px @border;
+    padding: 10px;
+}
+
+.el-tree,
+.modeDia {
+    .el-loading-mask {
+        background-color: rgba(255, 255, 255, 1) !important;
+    }
+}
+
+// 页面中的遮罩层
+#main .el-loading-mask {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+// 图片预览
+.el-image-viewer__btn.el-image-viewer__close i {
+    color: @main;
+}
+
+// 禁用按钮
+.el-button--primary.is-disabled,
+.el-button--primary.is-disabled:hover,
+.el-button--primary.is-disabled:focus,
+.el-button--primary.is-disabled:active {
+    background-color: #fec077;
+    border-color: #fec077;
+}
+
+// .el-image-viewer__actions__inner i
+// element password IE内核上去掉小眼睛
+.paswordNoEye {
+    input::-ms-clear {
+        display: none;
+    }
+
+    input::-ms-reveal {
+        display: none;
+    }
+}
+
+// 解决el-select点击两次选中问题
+.el-scrollbar {
+    .el-scrollbar__bar {
+        opacity: 1 !important;
+    }
+}
+
+// 解决wangeditor级别过高 下拉框被覆盖
+.el-select-dropdown {
+    z-index: 10002 !important;
+}
+
+// 解决 下拉框，选择后退出，再进入点击下拉框，上次选中的有个被选中的背景
+.el-select-dropdown__item.hover {
+    background-color: #fff;
+}
+
+.el-select-dropdown__item:hover {
+    background-color: @background;
+}
+
+// .el-button.is-disabled,
+// .el-button.is-disabled:hover,
+// .el-button.is-disabled:focus {
+//   border-color: #999;
+//   background-color: #999;
+//   color: #fff;
+// }
+@media only screen and (max-width: 768px) {
+    // .el-drawer__close-btn {
+    //   font-size: 2rem;
+    // }
+
+    .el-dialog {
+        width: 90%;
+        max-width: 520px;
+
+        .el-form-item {
+            min-width: none;
+        }
+
+        // .el-dialog__header {
+        //   padding: 1rem;
+        // }
+        // .el-dialog__headerbtn {
+        //   top: 1rem;
+        //   right: 1rem;
+        //   // font-size: 0.8rem;
+        // }
+        // .el-dialog__title {
+        //   font-size: 0.9rem;
+        // }
+        // .el-dialog__footer {
+        //   padding: 0.6rem;
+        // }
+    }
+
+    .el-backtop {
+        // width: 4rem;
+        // height: 4rem;
+        // font-size: 1.3rem;
+        bottom: 12.5rem !important;
+        right: 3rem !important;
+    }
+
+    // 解决ios上input光标过长
+    .el-input__inner,
+    .el-textarea__inner {
+        line-height: 20px;
+        padding: 0 0.75rem;
+    }
+
+    // .el-form-item__label {
+    //   font-size: 1.4rem;
+    // }
+    // .el-input,
+    // .el-textarea {
+    //   font-size: 0.8rem;
+    // }
+    // .el-form-item__error {
+    //   font-size: 0.7rem;
+    // }
+    // .el-button {
+    //   font-size: 0.8rem;
+    //   padding: 0.6rem 1rem;
+    // }
+}
+
+/* 
+ * element ui 修改 
+ * YS  2020/8/4
+ */
+.search {
+    padding: 20px;
+    border-bottom: 1px solid #ebeef5;
+}
+
+.el-button.buttonInit {
+    padding: 12px 20px;
+    background-color: #fea53d;
+    border-color: #fea53d;
+    color: #fff;
+}
+
+.el-button.el-button--default:hover {
+    background-color: #fec077;
+    border-color: #fec077;
+    color: #fff;
+}
+
+.el-button.el-button--default.is-plain {
+    color: #fea53d;
+    background: #fff6ec;
+    border-color: #ffdbb1;
+}
+
+.el-button.el-button--default.is-plain:hover,
+.el-button.el-button--default.is-plainn:hover {
+    background: #fea53d;
+    border-color: #fea53d;
+    color: #fff;
+}
+
+.box2 {
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 20px 0;
+    background: #fff;
+}
+
+.boxList{
+    display: block;
+    box-sizing: border-box;
+    padding: 20px  0;
+    background: #fff;
+}
+
+//所有表格 标题样式
+.el-table{
+    width:99.9%!important;
+}
+.el-table th {
+    background-color: #eeeeee !important;
+    text-align: center !important;
+    border-right: 1px solid #d8dbe2bd !important;
+}
+.el-table--border th {
+    border-bottom: 1px solid #d8dbe2bd;
+}
+//分页信息栏样式
+.el-table td {
+    text-align: center !important;
+    border-right: 1px solid #ebeef5 !important;
+}
+.el-table__row:nth-child(2n) {
+    td,
+    th {
+      background: #fafafa !important;
+    }
+}
+
+.fenye {
+    margin-top: 15px;
+    float: right;
+}
+
+
+//弹框DIV
+.dialog-input .dialog-div-left {
+    width: 20%;
+    display: inline-block;
+    margin: 10px;
+    text-align: left;
+}
+
+.el-message{
+    top:60px !important;
+}
+
+
+.point-loss-analysis-pages {
+    height: 100%;
+    .point-loss-analysis-pages-left {
+      display: inline-block;
+      width: 20%;
+      /*overflow: auto;*/
+      /*border-right: 1px solid #eeeeee;*/
+      vertical-align: top;
+      padding-right: 10px;
+      box-sizing: border-box;
+      height: 800px;
+  
+      .el-tree {
+        /*margin: 20px;*/
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: auto;
+      }
+    }
+  
+    .point-loss-analysis-pages-right {
+      display: inline-block;
+      padding-left: 10px;
+      padding-top: 10px;
+      width: 79%;
+      box-sizing: border-box;
+      overflow: auto;
+    }
+  
+    .hover-span {
+      cursor: pointer;
+      text-decoration: underline;
+  
+      &:hover {
+        color: #1fb04a;
+      }
+    }
+}
+
+.el-container {
+    height: 97%;
+    .el-main {
+        background: #fff;
+    }
+}
+
+.importDialog {
+    .importFileInfo {
+        display: inline-block;
+        border: 1px solid #ccc;
+        width: 165px;
+        height: 34px;
+        margin: 0 10px 0 0;
+        border-radius: 5px;
+    }
+    .importUpload{
+        display: inline-block;
+    }
+}

@@ -1,0 +1,65 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.company a {
+  color: -webkit-link;
+  text-decoration: underline;
+}
+iframe {
+  border: none;
+}
+.btnClr {
+  background: #fe9900;
+}
+.btnClrFont {
+  color: #fe9900;
+}
+.pointer:hover {
+  cursor: pointer;
+}
+/* 去掉type=number时的右侧上下箭头 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+/* 美化el-tree的滚动条 */
+@media only screen and (min-width: 768px) {
+  .bg::-webkit-scrollbar,
+  .boxLeft::-webkit-scrollbar,
+  .shop-tree::-webkit-scrollbar,
+  .filter-tree::-webkit-scrollbar {
+    width: 0.4rem;
+    height: 0.4rem;
+  }
+  .el-aside .el-menu::-webkit-scrollbar {
+    width: 0;
+  }
+  .bg::-webkit-scrollbar-track,
+  .boxLeft::-webkit-scrollbar-track,
+  .shop-tree::-webkit-scrollbar-track,
+  .filter-tree::-webkit-scrollbar-track {
+    background-color: #fff;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+  }
+  /* .el-menu::-webkit-scrollbar-track {
+    background-color: rgb(48, 55, 61);
+  } */
+  .bg::-webkit-scrollbar-thumb,
+  .boxLeft::-webkit-scrollbar-thumb,
+  .shop-tree::-webkit-scrollbar-thumb,
+  .filter-tree::-webkit-scrollbar-thumb {
+    background-color: #eee;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+  }
+  /* .el-menu::-webkit-scrollbar-thumb {
+    background-color: rgb(48, 55, 61);
+  } */
+}

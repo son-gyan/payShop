@@ -1,0 +1,315 @@
+// flex布局
+.flex {
+  .display-flex();
+}
+// flex布局换主轴方向
+.flex-d {
+  .display-flex();
+  .flex-direction(column);
+}
+// flex布局主轴居中
+.flex-hc {
+  .display-flex();
+  .justify-content(center);
+}
+// flex布局主轴靠右
+.flex-hr {
+  .display-flex();
+  .justify-content(flex-end);
+}
+.flex-hrvc {
+  .display-flex();
+  .justify-content(flex-end);
+  .align-items(center);
+}
+// flex布局主轴两侧靠边
+.flex-hb {
+  .display-flex();
+  .justify-content(space-between);
+}
+// flex布局主轴两侧靠边侧轴居中
+.flex-hbvc {
+  .display-flex();
+  .justify-content(space-between);
+  .align-items(center);
+}
+// flex布局主轴两侧靠边侧轴居中
+.flex-ha {
+  .display-flex();
+  .justify-content(space-around);
+}
+// flex布局主轴靠左侧轴居中
+.flex-hlvc {
+  .display-flex();
+  .align-items(center);
+}
+// flex布局主轴靠右侧轴居中
+.flex-hrvc {
+  .display-flex();
+  .justify-content(flex-end);
+  .align-items(center);
+}
+// flex布局单行全居中
+.flex-hvc {
+  .display-flex();
+  .justify-content(center);
+  .align-items(center);
+}
+// 换方向单行主轴居中
+.flex-hdc {
+  .display-flex();
+  .flex-direction(column);
+  .justify-content(center);
+}
+// 换方向主轴起始,侧轴居中
+.flex-dvc {
+  .display-flex();
+  .flex-direction(column);
+  .align-items(center);
+  // .justify-content(center);
+  // ie flex换方向，侧轴居中flex子项文字溢出容器,解决子项设置 max-width:100%
+  & > * {
+    max-width: 100%;
+  }
+}
+
+// 换方向单行全居中
+.flex-hvdc {
+  .display-flex();
+  .flex-direction(column);
+  .justify-content(center);
+  .align-items(center);
+}
+// flex布局换行主轴居中
+.flex-whc {
+  .display-flex();
+  .justify-content(center);
+  .flex-wrap(wrap);
+}
+// .flex-wha {
+//   .display-flex();
+//   .justify-content(space-around);
+//   .flex-wrap(wrap);
+// }
+// flex布局换行侧轴居中,主轴默认值，左
+.flex-wvc {
+  .display-flex();
+  .flex-wrap(wrap);
+  .align-content(center);
+  .align-items(center);
+}
+// flex布局换行全居中
+.flex-hvwc {
+  .display-flex();
+  .justify-content(center);
+  .flex-wrap(wrap);
+  .align-content(center);
+  .align-items(center); //兼容ie，只有一行的时候也居中
+}
+// flex布局换行around居中
+.flex-hvwa {
+  .display-flex();
+  .justify-content(space-around);
+  .flex-wrap(wrap);
+  .align-content(center);
+}
+// flex布局换行水平靠左,垂直居中
+.flex-whlvc {
+  .display-flex();
+  .flex-wrap(wrap);
+  .align-content(center);
+}
+.flex-w {
+  .display-flex();
+  .flex-wrap(wrap);
+}
+// flex布局两头
+.flex-zy {
+  .display-flex();
+  .justify-content(space-between);
+}
+// flex布局两头换行
+.flex-zywc {
+  .display-flex();
+  .justify-content(space-between);
+  .flex-wrap(wrap);
+  .align-content(center);
+}
+// flex布局换行左起
+.flex-n {
+  .display-flex();
+  .align-content(center);
+  .flex-direction(row);
+  .flex-wrap(wrap);
+}
+// 子元素分配剩余空间
+.flex1 {
+  .flex(1);
+}
+// flex布局兼容
+.display-flex() {
+  // display: box; /*（伸缩盒最老版本）*/
+  display: -moz-box; /* Firefox 19 */
+  display: -ms-flexbox; /* 混合版本语法: IE 10 */
+  display: -webkit-box; /* iOS 6-, Safari 3.1-6 */
+  display: -webkit-flex; /* Chrome */
+  display: flex; /*flex容器*/
+}
+// 主轴方向
+.flex-direction(@flex-direction: row) {
+  -moz-flex-direction: @flex-direction;
+  -ms-flex-direction: @flex-direction;
+  -o-flex-direction: @flex-direction;
+  -webkit-flex-direction: @flex-direction;
+  flex-direction: @flex-direction;
+}
+// 主轴对齐方式
+.justify-content(@justify-content: flex-start) {
+  -moz-justify-content: @justify-content;
+  -ms-justify-content: @justify-content;
+  -o-justify-content: @justify-content;
+  -webkit-justify-content: @justify-content;
+  justify-content: @justify-content;
+}
+// 侧轴的对其方式(单行)
+.align-items(@align-items: stretch) {
+  -moz-align-items: @align-items;
+  -ms-align-items: @align-items;
+  -o-align-items: @align-items;
+  -webkit-align-items: @align-items;
+  align-items: @align-items;
+}
+// flex纵向换行
+.flex-wrap(@flex-wrap: nowrap) {
+  -moz-flex-wrap: @flex-wrap;
+  -ms-flex-wrap: @flex-wrap;
+  -o-flex-wrap: @flex-wrap;
+  -webkit-flex-wrap: @flex-wrap;
+  flex-wrap: @flex-wrap;
+}
+// 多行侧轴对齐方式
+.align-content(@align-content:stretch) {
+  -moz-align-content: @align-content;
+  -ms-align-content: @align-content;
+  -o-align-content: @align-content;
+  -webkit-align-content: @align-content;
+  align-content: @align-content;
+}
+// // 子元素分配主轴空间
+// .flex(@flexValue: 1) {
+//   -prefix-box-flex: @flexValue; /* old spec webkit, moz */
+//   -moz-box-flex: @flexValue; /* Firefox 19- */
+//   -ms-flex: @flexValue; /* IE 10 */
+//   -webkit-box-flex: @flexValue; /* OLD - iOS 6-, Safari 3.1-6 */
+//   -webkit-flex: @flexValue; /* Chrome */
+//   //  width:20%;
+//   flex: @flexValue; /* NEW,  Opera 12.1, Firefox 20+ */
+// }
+// 子元素分配主轴空间
+.flex(@flexValue: 1) {
+  -prefix-box-flex: @flexValue; /* old spec webkit, moz */
+  -moz-box-flex: @flexValue 1 0%; /* Firefox 19- */
+  -ms-flex: @flexValue 1 0%; /* IE 10 */
+  -webkit-box-flex: @flexValue; /* OLD - iOS 6-, Safari 3.1-6 */
+  -webkit-flex: @flexValue; /* Chrome */
+  flex: @flexValue; /* NEW,  Opera 12.1, Firefox 20+ */
+}
+// 子元素在侧轴的对齐方式
+.align-self(@align-self: auto) {
+  -moz-align-self: @align-self;
+  -ms-align-self: @align-self;
+  -o-align-self: @align-self;
+  -webkit-align-self: @align-self;
+  align-self: @align-self;
+}
+
+//flex布局固定像素值
+.flex-pixel-val(@flexPixel: 0) {
+  -moz-box-flex: 0 0 @flexPixel; /* Firefox 19- */
+  -ms-flex: 0 0 @flexPixel; /* IE 10 */
+  -webkit-flex: 0 0 @flexPixel; /* Chrome */
+  flex: 0 0 @flexPixel; /* NEW,  Opera 12.1, Firefox 20+ */
+}
+
+// 圆角值
+// .border-radius(@radiusValue) {
+//   -webkit-border-radius: @radiusValue;
+//   border-radius: @radiusValue;
+// }
+
+// .box-sizing-border-box {
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+// }
+
+// .box-sizing-content-box {
+//   -webkit-box-sizing: content-box;
+//   box-sizing: content-box;
+// }
+
+// .bottom-line-custom(
+//   @edgTop: 0,
+//   @edgRight: 0,
+//   @edgBottom: 0,
+//   @edgLeft: 0
+// ) {
+//   position: relative;
+//   &::after {
+//     position: absolute;
+//     content: '';
+//     left: @edgLeft;
+//     right: @edgRight;
+//     bottom: @edgBottom;
+//     // margin-top: 1px;
+//     height: 1px;
+//     background-color: @lineColor;
+//     -webkit-transform: scaleY(0.5);
+//     transform: scaleY(0.5);
+//   }
+// }
+
+// .top-line-custom(@edgTop: 0, @edgRight: 0, @edgBottom: 0, @edgLeft: 0) {
+//   position: relative;
+//   &::before {
+//     position: absolute;
+//     content: '';
+//     left: @edgLeft;
+//     right: @edgRight;
+//     top: @edgTop;
+//     height: 1px;
+//     background-color: @lineColor;
+//     -webkit-transform: scaleY(0.5);
+//     transform: scaleY(0.5);
+//   }
+// }
+
+// //上右下左
+// .bottom-line-zero {
+//   @include bottom-line-custom(0, 0, 0, 0);
+// }
+
+// .bottom-line-default {
+//   @include bottom-line-custom(0, 15px, 0, 15px);
+// }
+
+// .top-line-zero {
+//   @include top-line-custom(0, 0, 0, 0);
+// }
+// .right-arrow-custom(@edgRight: 0px, @imgSize: 16px) {
+//   position: relative;
+//   & > .right-arrow {
+//     position: absolute;
+//     top: 50%;
+//     margin-top: -@imgSize / 2;
+//     right: @edgRight;
+//     background: url('../assets/arrow-right.png') no-repeat center;
+//     background-size: @imgSize;
+//     width: @imgSize;
+//     height: @imgSize;
+//     border: none;
+//   }
+// }
+
+// .right-arrow-default {
+//   @include right-arrow-custom(10px, 16px);
+// }

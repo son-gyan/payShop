@@ -1,0 +1,159 @@
+@charset "utf-8";
+a,
+article,
+aside,
+b,
+button,
+del,
+details,
+div,
+body,
+dl,
+dt,
+dd,
+em,
+figcaption,
+figure,
+footer,
+form,
+header,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+iframe,
+input,
+ins,
+img,
+label,
+legend,
+li,
+nav,
+menu,
+ol,
+p,
+pre,
+section,
+select,
+small,
+span,
+strong,
+textarea,
+table,
+thead,
+tbody,
+tfoot,
+tr,
+th,
+td,
+ul,
+var {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  /* white-space: normal;
+  word-break: break-all; */
+}
+
+/* body {
+  font: 12px/1.5 'Microsoft YaHei', '宋体', Tahoma, Arial, sans-serif;
+  color: #555;
+  background-color: #f7f7f7;
+} */
+
+/*去除边框*/
+fieldset,
+img,
+input,
+button,
+textarea {
+  border: none;
+  /*去除的蓝色小边框*/
+  outline-style: none;
+  -webkit-appearance: none;
+}
+
+/*禁止表单域缩放*/
+textarea {
+  resize: none;
+}
+
+/* 取消链接高亮(移动端)  */
+a {
+  text-decoration: none;
+  /* color: #969696; */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* a:hover {
+  color: #00a4ff;
+} */
+
+/* 图片自适应 */
+img {
+  /* width: 100%; */
+  /*解决图片底部对其问题*/
+  /* display: block; */
+  vertical-align: top;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* em,
+i,
+u {
+  font-style: normal;
+}
+s {
+  text-decoration: none;
+} */
+/* 提供了一些公共类 */
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/* 清除浮动公共类 */
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  *zoom: 1;
+}
+
+/*单行溢出*/
+.one-txt-cut {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/*多行溢出*/
+.txt-cut {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+/*多行溢出*/
+.two-txt-cut {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
